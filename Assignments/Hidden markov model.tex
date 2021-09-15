@@ -1,0 +1,53 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+
+\title{The Hidden Markov Model}
+
+\author{Durgesh Kumar 18111023}
+
+\date{September 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Definition}
+
+Hidden Markov Models (HMMs) are a class of stochastic model that allow us to predict a sequence of unknown (hidden) variables from a set of observed variables.
+
+A simple example of an HMM is predicting the weather (hidden variable) based on the type of clothes that someone wears (observed). An HMM can be viewed as a bayes Net unrolled through time with observations made at a sequence of time steps being used to predict the best sequence of hidden states.
+
+\section{Why Hidden Markov Model?}
+
+The reason it is called a Hidden Markov Model is because we are constructing an inference model based on the assumptions of a Markov process. 
+
+The Markov process assumption is simply that the “future is independent of the past given the present” means it is a memorylessness In other words, assuming we know our present state; we do not need any other historical information to predict the future state.
+
+\section{Intuition behind HMMs}
+
+HMMs are probabilistic models. They allow us to compute the joint probability of a set of hidden states given a set of observed states. The hidden states are also referred to as latent states. Once we know the joint probability of a sequence of hidden states, we determine the best possible sequence i.e. the sequence with the highest probability and choose that sequence as the best sequence of hidden states.
+
+Generally, the term “states” are used to refer to the hidden states and “observations” are used to refer to the observed states.
+
+1.	Transition data — the probability of transitioning to a new state conditioned on a present state.
+
+2.	Emission data — the probability of transitioning to an observed state conditioned on a hidden state.
+
+3.	Initial state information — the initial probability of transitioning to a hidden state. This can also be looked at as the prior probability.
+
+\section{Characteristic of Hidden Markov Model}
+
+1. Each HMM contains a series of discrete-state
+
+2. Time-homologous
+
+3. Memorylessness
+
+\section{Example of Hidden Msrkov Model}
+
+Consider two friends, Alice and Bob, who live far apart from each other and who talk together daily over the telephone about what they did that day. Bob is only interested in three activities: walking in the park, shopping, and cleaning his apartment. The choice of what to do is determined exclusively by the weather on a given day. Alice has no definite information about the weather, but she knows general trends. Based on what Bob tells her he did each day, Alice tries to guess what the weather must have been like.
+
+Alice believes that the weather operates as a discrete Markov chain. There are two states, "Rainy" and "Sunny", but she cannot observe them directly, that is, they are hidden from her. On each day, there is a certain chance that Bob will perform one of the following activities, depending on the weather: "walk", "shop", or "clean". Since Bob tells Alice about his activities, those are the observations. The entire system is that of a hidden Markov model (HMM).
+
+\end{document}
